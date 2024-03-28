@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Tecnica</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Whastapp Button -->
+    <link rel="stylesheet"
+        href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+    <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
+        <div class="rwb-tooltip">🚀 Estamos no WhatsApp</div>
+        <img alt="whatsapp-icon"
+            src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+
+<body>
+    <header>
+        <nav class="navContainer">
+            <div class="navLogoDiv"> <a href="#"><img class="navLogo" src="../Assets/Logo/logo.png"
+                        alt="Logo Agenda Tecnica"></a>
+            </div>
+            <!-- Menu Mobile -->
+            <ul class="navItensContainerMobile">
+                <li onclick=hideSidebar()><a href="#"><img src="../Assets/IMGS/closeIconHamburguerMenu.svg"
+                            alt="Icon Hamburguer Menu"></a></li>
+                <li><a class="navItem" href="#">Início</a></li>
+                <div class="navDropdown">
+                    <button class="navDropBtn" href="#">Sobre <i class="bi bi-chevron-down"></i></button>
+                    <div class="navDropBtnContent">
+                        <a class="navDropBtnItem" href="#">Recursos</a>
+                        <a class="navDropBtnItem" href="#">Aplicações</a>
+                        <a class="navDropBtnItem" href="#">Segurança do Trabalho</a>
+                        <a class="navDropBtnItem" href="#">Saúde Ocupacional</a>
+                        <a class="navDropBtnItem" href="#">Preços</a>
+                        <a class="navDropBtnItem" href="#">Telas</a>
+                    </div>
+                </div>
+                <li><a class="navItem" href="#">Orçamento</a></li>
+                <li><a class="navItem" href="#">Consultoria</a></li>
+                <li><a class="navItem" href="#" id="navContactButton">Contato</a></li>
+            </ul>
+            <!-- Menu Desktop -->
+            <ul class="navItensContainerDesktop">
+                <li><a class="hideOnMobile" href="#">Início</a></li>
+                <div class="hideDivOnMobile">
+                    <button class="hideOnMobile" href="#">Sobre <i class="bi bi-chevron-down"></i></button>
+                    <div class="navDropBtnContent">
+                        <a class="navDropBtnItem" href="#">Recursos</a>
+                        <a class="navDropBtnItem" href="#">Aplicações</a>
+                        <a class="navDropBtnItem" href="#">Segurança do Trabalho</a>
+                        <a class="navDropBtnItem" href="#">Saúde Ocupacional</a>
+                        <a class="navDropBtnItem" href="#">Preços</a>
+                        <a class="navDropBtnItem" href="#">Telas</a>
+                    </div>
+                </div>
+                <li><a class="hideOnMobile" href="#">Orçamento</a></li>
+                <li><a class="hideOnMobile" href="#">Consultoria</a></li>
+                <li><a class="hideOnMobile" href="#" id="navContactButton">Contato</a></li>
+                <div class="socialMidiasContainer">
+                    <a class="socialMidiaIcon" href="https://www.facebook.com/Agenda-T%C3%A9cnica-100669640753272/"
+                        target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="socialMidiaIcon" href="https://www.linkedin.com/company/ammarhes-consultoria/"
+                        target="_blank"><i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+                <div class="callNavContainer">
+                    <span class="callNavNumbers">(21) 3549-1640 / 2262-9752 /
+                        2026-0011</span>
+                    <span class="callNavText"><i class="bi bi-telephone-fill"></i> Solicitar uma
+                        ligação</span>
+                </div>
+                <li class="menuCloseButtonMobile" onclick=showSidebar()><a href="#"><img
+                            src="../Assets/IMGS/IconHamburguerMenu.svg" alt="Icon Hamburguer Menu"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+
+<script src="./scripts/Home.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</html>
