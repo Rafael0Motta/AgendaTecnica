@@ -152,6 +152,123 @@ nav li:first-child {
     display: none;
 }
 
+/* BANNER */
+
+.homeImageContainer {
+    width: 100%;
+    background-color: #000;
+    background-image: url('../Assets/Banners/BannerImageHome.jpg');
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-wrap: nowrap;
+    padding: 0 50px;
+}
+
+.homeImageText, .homeImageForms {
+    width: 50%;
+    padding: 50px;
+}
+
+.homeImageText h1 {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.homeImageText p {
+    color: #ffffff;
+    margin: 25px 0;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.homeImageTextLinks {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.homeImageTextLinks i {
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.homeImageText a {
+    background-color: #052c52;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+#homeImageTextButtonResource {
+    background-color: #efb225;
+}
+
+.homeImageText a:hover {
+    background-color: #efb225;
+    color: #ffffff;
+}
+
+#homeImageTextButtonResource:hover {
+    color: #efb225;
+    background-color: #052c52;
+}
+
+/* FORM */
+
+.formHomeImage {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.formHomeImage h2 {
+    text-align: center;
+    margin: 0px 0 35px 0;
+    color: #052c52;
+    font-weight: 500;
+}
+
+.homeImageForms {
+    display: flex;
+    justify-content: center;
+}
+
+.formInputs input {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px #ccc;
+}
+
+.homeImageFormsSubmit {
+    cursor: pointer;
+    background-color: #052c52;
+    border: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.homeImageFormsSubmit:hover {
+    background-color: #efb225;
+}
+
+
 @media (max-width: 1050px) {
 
     /* NAV */
@@ -175,4 +292,15 @@ nav li:first-child {
     .menuCloseButtonMobile {
         display: block;
     }
+
+    /* FORM BANNER */
+
+    .homeImageContainer {
+        flex-direction: column;
+    }
+
+    .homeImageText, .homeImageForms {
+        width: 100%;
+    }
+
 }
