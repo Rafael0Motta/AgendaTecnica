@@ -268,6 +268,80 @@ nav li:first-child {
     background-color: #efb225;
 }
 
+/* TABS */
+
+.aboutUs {
+    padding: 60px;
+    margin: 50px 0;
+}
+
+.aboutUsTitle {
+    text-align: center;
+    margin: 50px;
+}
+
+.aboutUsTitle span {
+    display: block;
+    margin: 10px 0;
+    color: #0e151b;
+    text-transform: uppercase;
+}
+
+.aboutUsTitle h2 {
+    color: #052c52;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.aboutUsContainer {
+    display: flex;
+    width: 100%;
+    padding: 0 40px;
+    gap: 40px;
+    align-items: center;
+}
+
+.aboutUsOptions {
+    width: 100%;
+    height: 350px;
+}
+
+.aboutUsOptions li {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.aboutUsOptions li:hover {
+    color: #efb225;
+}
+
+.aboutUsOptions li.active {
+    background-color: #052c52;
+    color: #efb225;
+}
+
+.aboutUsTabs {
+    float: left;
+    padding: 0px 12px;
+    height: 300px;
+}
+
+.optionsTabContent p {
+    margin-bottom: 10px;
+}
+
+.optionsTabContent p>span {
+    font-weight: 500;
+}
 
 @media (max-width: 1050px) {
 
@@ -303,4 +377,13 @@ nav li:first-child {
         width: 100%;
     }
 
+    /* TABS */
+
+    .aboutUsContainer {
+        display: block;
+    }
+
+    .aboutUsOptions {
+        height: 280px;
+    }
 }
