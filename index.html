@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Whastapp Button -->
-    <link rel="stylesheet"
+    <!--  <link rel="stylesheet"
         href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
         <div class="rwb-tooltip">🚀 Estamos no WhatsApp</div>
         <img alt="whatsapp-icon"
             src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
-    </a>
+    </a> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -88,7 +88,8 @@
             </ul>
         </nav>
     </header>
-    <main><!-- BANNER HOME -->
+    <main>
+        <!-- BANNER HOME -->
         <section class="homeImage">
             <div class="homeImageContainer">
                 <div class="homeImageText">
@@ -123,74 +124,35 @@
                 </div>
             </div>
         </section>
-
-
+        <!-- ABOUT  -->
         <section class="aboutUs">
             <div class="aboutUsTitle">
                 <span>um pouco sobre nós</span>
                 <h2>Criadores da plataforma Agenda Técnica Sistemas</h2>
             </div>
             <div class="aboutUsContainer">
-                <div class="aboutUsOptions">
-                    <ul class="optionsNav">
-                        <li class="optionsNavItem" onclick="openVerticalTabs(event, 'AboutUs')" id="defaultOpen">Quem
-                            Somos</li>
-                        <li class="optionsNavItem" onclick="openVerticalTabs(event, 'History')">Nossa História</li>
-                        <li class="optionsNavItem" onclick="openVerticalTabs(event, 'Differential')">Nosso Diferencial
-                        </li>
-                        <li class="optionsNavItem" onclick="openVerticalTabs(event, 'Proposal')">Nossa Proposta</li>
-                    </ul>
+                <div class="aboutUsOptions" id="aboutUsOptions1">
                 </div>
-                <div class="aboutUsTabs">
-                    <ul>
-                        <li id="AboutUs" class="optionsTabContent">
-                            <p><span>A Ammarhes Consultores em QSMS</span>, criadora da plataforma, é uma empresa de
-                                consultoria
-                                sólida no mercado atuando há mais de 10 anos em todos os segmentos de Segurança e Saúde
-                                Ocupacional. Vimos a necessidade de criação da nossa própria plataforma online para
-                                gestão de SMS de forma a atender da melhor maneira possível aos nossos clientes,
-                                cumprindo todas as exigências de mercado. Trabalhamos com um sistema de controle online,
-                                disponibilizando acesso remoto aos itens contratados e eficiência a baixo custo.</p>
-                            <p>Temos solidez financeira, no ramo em que atuamos é fundamental a contratação de uma
-                                empresa consolidada e com tradição no mercado.
-                            </p>
-                        </li>
-                        <li id="History" class="optionsTabContent">
-                            <p> A <span>Ammarhes</span> nasceu como equipe de consultores especializados em Saúde
-                                Ocupacional, Meio
-                                Ambiente e Segurança do Trabalho, um grupo multidisciplinar que cresceu em direção ao
-                                desenvolvimento de sistemas de gestão, incorporando ao seu portifólio a Assessoria na
-                                aplicação de diversas Normas como as ISO 14001, ISO 9001, NBR 16001 e SA 8000.</p>
-                            <p>Somos registrados no CREA, com emissão de ART (Anotação de Responsabilidade Técnica) nas
-                                atividades de Engenharia, com ênfase em Segurança do Trabalho e meio ambiente; e no CRM
-                                pelo Médico-Coordenador.</p>
-                        </li>
-                        <li id="Differential" class="optionsTabContent">
-                            <p>Graças a grande experiência adquirida pela empresa no ramo da consultoria de Saúde e
-                                Segurança do Trabalho a plataforma <span>Agenda Técnica Sistemas </span>pôde ser criada
-                                de forma
-                                intuitiva trazendo agilidade na criação e consulta de todo o conteúdo de gestão de SMS,
-                                além de vir pronta para atender as exigências do eSocial.
-                            </p>
-                        </li>
-                        <li id="Proposal" class="optionsTabContent">
-                            <p>A <span>Agenda Técnica Sistemas</span> tem como objetivo se tornar a solução completa e
-                                definitiva
-                                para a gestão de Saúde e Segurança do Trabalho. Sendo acessível por qualquer dispositivo
-                                com acesso a internet, fica fácil e rápido ter acesso a todos os documentos importantes
-                                agilizando as tarefas do dia-a-dia e trazendo segurança e confiabilidade para as
-                                empresas diante do eSocial.
-                            </p>
-                        </li>
-                    </ul>
+                <div class="aboutUsTabs" id="aboutUsTabs1">
                 </div>
+            </div>
+            <div class="aboutUsButtons">
+                <a href="#" id="aboutUsButtonLearnMore">Saiba Mais <i class="bi bi-chevron-right"></i></a>
+                <a href="#" id="aboutUsButtonAmmarhes">Conheça A Ammarhes <i class="bi bi-chevron-right"></i></a>
+                <a href="#" id="aboutUsButtonQuestions"> Alguma dúvida?</a>
+            </div>
+        </section>
+        <!-- GRID RECURSOS -->
+        <section class="gridRecursos">
+            <div id="gridRecursosContainer">
             </div>
         </section>
     </main>
-
 </body>
 
 <script src="./scripts/Home.js"></script>
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

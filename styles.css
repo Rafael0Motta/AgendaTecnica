@@ -168,7 +168,7 @@ nav li:first-child {
 
 .homeImageText, .homeImageForms {
     width: 50%;
-    padding: 50px;
+    padding: 50px 0;
 }
 
 .homeImageText h1 {
@@ -185,18 +185,6 @@ nav li:first-child {
     font-size: 17px;
 }
 
-.homeImageTextLinks {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px
-}
-
-.homeImageTextLinks i {
-    font-size: 10px;
-    margin-left: 10px;
-}
-
 .homeImageText a {
     background-color: #052c52;
     border-radius: 5px;
@@ -207,6 +195,18 @@ nav li:first-child {
     padding: 15px;
     margin-right: 10px;
     text-decoration: none;
+}
+
+.homeImageTextLinks {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.homeImageTextLinks i {
+    font-size: 10px;
+    margin-left: 10px;
 }
 
 #homeImageTextButtonResource {
@@ -272,7 +272,6 @@ nav li:first-child {
 
 .aboutUs {
     padding: 60px;
-    margin: 50px 0;
 }
 
 .aboutUsTitle {
@@ -298,7 +297,6 @@ nav li:first-child {
     width: 100%;
     padding: 0 40px;
     gap: 40px;
-    align-items: center;
 }
 
 .aboutUsOptions {
@@ -332,7 +330,6 @@ nav li:first-child {
 .aboutUsTabs {
     float: left;
     padding: 0px 12px;
-    height: 300px;
 }
 
 .optionsTabContent p {
@@ -342,6 +339,120 @@ nav li:first-child {
 .optionsTabContent p>span {
     font-weight: 500;
 }
+
+.aboutUsButtons {
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.aboutUsButtons a {
+    background-color: #052c52;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.aboutUsButtons i {
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.aboutUsButtons a:hover {
+    background-color: #efb225;
+    color: #ffffff;
+}
+
+#aboutUsButtonQuestions {
+    background: none;
+    color: #052c52;
+    text-decoration: underline;
+    font-size: 15px;
+    text-underline-offset: 8px;
+    margin: 0;
+}
+
+/* SECTION GRID RECURSOS */
+
+#gridRecursosContainer {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gridRecursosItem {
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+
+.gridRecursosItem a {
+    text-decoration: none;
+}
+
+.gridRecursosTitle {
+    border-bottom: solid 1px #efb225;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.gridRecursosTitle span {
+    background: #efb255;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.gridRecursosTitle h3 {
+    color: #052c52;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.gridRecursosSubTitle {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #052c52;
+}
+
+.gridRecursosContentText {
+    width: 100%;
+    margin: 10px 0;
+    line-height: 25px;
+    color: #6f7274;
+    font-size: 15px;
+}
+
+.gridRecursosItem:hover {
+    background: #052c52;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+.gridRecursosItem:hover h3 {
+    color: #ffffff;
+}
+
+.gridRecursosItem:hover p {
+    color: #ffffff;
+}
+
+.gridRecursosItem:hover .gridRecursosSubTitle {
+    color: #efb225;
+}
+
 
 @media (max-width: 1050px) {
 
@@ -375,15 +486,69 @@ nav li:first-child {
 
     .homeImageText, .homeImageForms {
         width: 100%;
+        padding: 50px 0;
     }
 
     /* TABS */
+
+    .aboutUs {
+        padding: 60px 0;
+    }
 
     .aboutUsContainer {
         display: block;
     }
 
+    .aboutUsTabs {
+        margin: 70px 0 0 0;
+        padding: 20px;
+    }
+
     .aboutUsOptions {
         height: 280px;
     }
+
+    .aboutUsButtons {
+        padding: 20px 50px;
+    }
+
+    .optionsNavItem {
+        padding: 0;
+    }
+
+    /* gridRecursos */
+
+    .gridRecursosItem {
+        width: 40%;
+    }
+}
+
+@media (max-width: 750px) {
+    /* gridRecursos */
+
+    .gridRecursosItem {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .homeImageContainer {
+        padding: 0 10px;
+    }
+
+    /* TABS */
+
+    .aboutUsContainer {
+        padding: 0 10px;
+    }
+
+    .aboutUsTabs {
+        padding: 0;
+    }
+
+    .aboutUsButtons {
+        padding: 20px 10px;
+    }
+
 }
