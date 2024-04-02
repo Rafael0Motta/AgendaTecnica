@@ -41,7 +41,7 @@ const tabsData = [
     prop: "AboutUs",
     title: "Quem Somos",
     paragraph:
-      "A Ammarhes Consultores em QSMS</span>, criadora da plataforma, é uma empresa de consultoria sólida no mercado atuando há mais de 10 anos em todos os segmentos de Segurança e Saúde Ocupacional. Vimos a necessidade de criação da nossa própria plataforma online para gestão de SMS de forma a atender da melhor maneira possível aos nossos clientes, cumprindo todas as exigências de mercado. Trabalhamos com um sistema de controle online, disponibilizando acesso remoto aos itens contratados e eficiência a baixo custo. Temos solidez financeira, no ramo em que atuamos é fundamental a contratação de uma empresa consolidada e com tradição no mercado.",
+      "A Ammarhes Consultores em QSMS, criadora da plataforma, é uma empresa de consultoria sólida no mercado atuando há mais de 10 anos em todos os segmentos de Segurança e Saúde Ocupacional. Vimos a necessidade de criação da nossa própria plataforma online para gestão de SMS de forma a atender da melhor maneira possível aos nossos clientes, cumprindo todas as exigências de mercado. Trabalhamos com um sistema de controle online, disponibilizando acesso remoto aos itens contratados e eficiência a baixo custo. Temos solidez financeira, no ramo em que atuamos é fundamental a contratação de uma empresa consolidada e com tradição no mercado.",
   },
   {
     prop: "History",
