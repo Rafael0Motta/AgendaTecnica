@@ -182,5 +182,73 @@ gridRecursosData.forEach((data) => {
 
   gridRecursosContainer.appendChild(gridRecursosItem);
 });
-
 document.getElementById("defaultOpen").click();
+
+/* GRID DOCS */
+
+const gridDocsData = [
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "PPRA",
+    text: "Utilize o documento base do PPRA (tradicional ou com validação para o eSocial), fazendo o mapeamento de riscos, cronogramas de atividades e medições para determinar medidas de segurança.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "LTCAT",
+    text: "Analise o LTCAT individualmente ou coletivamente, documentando se há a necessidade ou não de aposentadoria especial de acordo com a periodicidade de exposição ao agente nocivo.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "PCMAT",
+    text: "Defina uma série de ações e medidas de segurança a serem adotadas durante o desenvolvimento da obra, visando antecipar os riscos por etapa e implementar medidas preventivas adequadas.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "PPP",
+    text: "Imediata geração de PPP (Perfil Profissiográfico Previdenciário) para um funcionário. Fácil criação, edição e acompanhamento de documentos importantes.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "Ordens de serviço",
+    text: "Elabore ordens de serviço sobre segurança e saúde no trabalho, dando ciência aos empregados por comunicados, cartazes ou meios eletrônicos dos riscos e perigos das tarefas a serem executadas.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "PGR",
+    text: "Formule e implante medidas e procedimentos, técnicos e administrativos, para prevenir riscos e manter as instalações operando dentro de padrões de segurança considerados eficazes.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "CAT",
+    text: "A Comunicação de Acidente de Trabalho deve ser emitida pela empresa para registrar um caso de acidente de trabalho ou doença ocupacional. A emissão da CAT é muito importante para que empresa e governo assumam suas responsabilidades e para que o trabalhador garanta seus direitos.",
+  },
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "Outros documentos",
+    text: "a plataforma possui controles de segurança específicos para a gestão ocupacional da sua empresa a fim de identificar os riscos e prevenir acidentes, e doenças, garantindo a integridade física dos colaboradores.",
+  },
+];
+
+const gridDocsContainer = document.getElementById("gridDocsContainer");
+
+gridDocsData.forEach((data) => {
+  const gridDocsItem = document.createElement("div");
+  gridDocsItem.classList.add("gridDocsItem");
+
+  const icon = document.createElement("span");
+  icon.innerHTML = `<i class="${data.icon}"></i>`;
+
+  const title = document.createElement("p");
+  title.classList.add("gridDocsItemTitle");
+  title.textContent = data.title;
+
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("gridDocsItemParagraph");
+  paragraph.textContent = data.text;
+
+  gridDocsItem.appendChild(icon);
+  gridDocsItem.appendChild(title);
+  gridDocsItem.appendChild(paragraph);
+
+  gridDocsContainer.appendChild(gridDocsItem);
+});
