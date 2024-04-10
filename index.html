@@ -5,32 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda Tecnica</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- BANNER -->
+    <link rel="preload" href="./Assets/Banners/BannerImageHome.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img10.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img9.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img8.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img7.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img6.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img5.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img4.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img3.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img2.jpg" as="image" />
+
+    <!--  -->
+
+
     <!-- Whastapp Button -->
-    <!--  <link rel="stylesheet"
+    <link rel="stylesheet"
         href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
         <div class="rwb-tooltip">🚀 Estamos no WhatsApp</div>
         <img alt="whatsapp-icon"
             src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
-    </a> -->
+    </a>
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
 </head>
 
 
 <body>
     <header>
         <nav class="navContainer">
-            <div class="navLogoDiv"> <a href="#"><img class="navLogo" src="../Assets/Logo/logo.png"
+            <div class="navLogoDiv"> <a href="#"><img class="navLogo" src="./Assets/Logo/logo.png"
                         alt="Logo Agenda Tecnica"></a>
             </div>
             <!-- Menu Mobile -->
@@ -124,6 +146,7 @@
                 </div>
             </div>
         </section>
+
         <!-- ABOUT  -->
         <section class="aboutUs">
             <div class="aboutUsTitle">
@@ -142,6 +165,7 @@
                 <a href="#" id="aboutUsButtonQuestions"> Alguma dúvida?</a>
             </div>
         </section>
+
         <!-- GRID RECURSOS  -->
         <section class="gridRecursos">
             <div id="gridRecursosContainer">
@@ -149,25 +173,103 @@
         </section>
 
         <!-- GRID DOCUMENTOS -->
-
         <section class="gridDocumentos">
             <h3 class="gridDocumentosh3">Documentos legais de Segurança do Trabalho</h3>
             <p class="gridDocumentosp">A tecnologia da nossa plataforma garante integração com o eSocial com emissão de
                 documentos dentro do
                 seu ambiente. Alguns dos nossos documentos: </p>
             <div id="gridDocsContainer">
-                <div class="gridDocsItem">
-                    <span><i class="bi bi-file-earmark-medical-fill"></i></span>
-                    <p class="gridDocsItemTitle">PPRA</p>
-                    <P class="gridDocsItemParagraph">Utilize o documento base do PPRA (tradicional ou com validação para
-                        o eSocial),
-                        fazendo o
-                        mapeamento de riscos, cronogramas de atividades e medições para determinar medidas de segurança.
-                    </P>
+            </div>
+        </section>
+
+        <!-- SECTION BANNER -->
+        <section class="banner">
+            <div class="swiffy-slider" id="listImg">
+                <ul class="slider-container" id="slider">
+                </ul>
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
                 </div>
             </div>
         </section>
+
+        <!-- PLATAFORM -->
+        <section class="gridsPlataforma">
+            <h3 class="gridsPlataformah3">A plataforma ainda conta com outros recursos!
+            </h3>
+            <p class="gridsPlataformap">Além do mencionado acima, contamos com mais funcionalidades. Entre em contato
+                conosco
+                para conhecer todo o potencial da plataforma. </p>
+            <div id="gridsPlataformaContainer">
+            </div>
+        </section>
+
+        <!-- FORM -->
+
+        <div class="formText">
+            <h2 class="formTextTilte">Fale conosco</h2>
+            <p class="formTextParagraph">Alguma dúvida? Nos envie uma mensagem!<br>Você também pode fazer um orçamento
+                gratuitamente clicando no botão abaixo:</p>
+        </div>
+        <form action="/submit" method="POST">
+            <div class="formContainer">
+                <div class="formField">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
+                </div>
+                <div class="formField">
+                    <label for="telefone">Telefone:</label><br>
+                    <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" required
+                        placeholder="Informe seu telefone"><br>
+
+                    <label for="assunto">Assunto:</label><br>
+                    <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
+                </div>
+
+                <div class="formField">
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="4" required
+                        placeholder="Digite sua mensagem"></textarea><br>
+                </div>
+
+            </div>
+            </div>
+            <div class="buttonSubmitFormsDIV">
+                <button class="buttonSubmitForms" type="submit">Enviar</button>
+            </div>
+        </form>
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footerContainer">
+            <div class="logo">
+                <img src="./Assets/Logo/logo.png" alt="Logo Agenda">
+            </div>
+            <div class="infos">
+                <h4 class="infosH4">AGENDA TECNICA SISTEMAS DE SEGURANCA E SAUDE DO TRABALHADOR LTDA - CNPJ:
+                    <strong>10.642.576/0001-06</strong>
+                </h4>
+                <h4 class="infosH4">Contato: <a href="tel:+552122629752">(21)
+                        3570-9541 / 2262-9752</a></h4>
+                <h4 class="infosH4">
+                    Email de contatos gerais:
+                    <a href="mailto:relacionamento@ammarhes.com.br">relacionamento@ammarhes.com.br</a>
+                    <a href="mailto:contato@agendatecnica.com.br">contato@agendatecnica.com.br</a>
+                </h4>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="topBtn" class="top"></a>
+
 </body>
 
 <script src="./scripts/home.js"></script>

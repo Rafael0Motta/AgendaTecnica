@@ -1,9 +1,41 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+
+.top {
+    --offset: 50px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+    /* Começa escondido */
+
+    /* Restante do seu estilo */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #efb225;
+    border-radius: 10px;
+}
+
+.top.active {
+    visibility: visible;
+    /* Aparece quando a classe ativa é adicionada */
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
 
 /* NAV */
 
@@ -157,16 +189,16 @@ nav li:first-child {
 .homeImageContainer {
     width: 100%;
     background-color: #000;
-    background-image: url('../Assets/Banners/BannerImageHome.jpg');
+    background-image: url(../Assets/Banners/BannerImageHome.jpg);
     display: flex;
-    align-items: center;
-    background-repeat: no-repeat;
     background-size: cover;
     flex-wrap: nowrap;
-    padding: 0 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
 }
 
-.homeImageText, .homeImageForms {
+.homeImageText {
     width: 50%;
     padding: 50px 0;
 }
@@ -269,7 +301,6 @@ nav li:first-child {
 }
 
 /* TABS */
-
 .aboutUs {
     padding: 60px;
 }
@@ -292,56 +323,17 @@ nav li:first-child {
     font-weight: 500;
 }
 
-.aboutUsContainer {
+.optionsNav {
+    width: 100%;
     display: flex;
-    width: 100%;
-    padding: 0 40px;
+    justify-content: space-evenly;
+    background: #052c52;
     gap: 40px;
-}
-
-.aboutUsOptions {
-    width: 100%;
-    height: 350px;
-}
-
-.aboutUsOptions li {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-.aboutUsOptions li:hover {
-    color: #efb225;
-}
-
-.aboutUsOptions li.active {
-    background-color: #052c52;
-    color: #efb225;
-}
-
-.aboutUsTabs {
-    float: left;
-    padding: 0px 12px;
-}
-
-.optionsTabContent p {
-    margin-bottom: 10px;
-}
-
-.optionsTabContent p>span {
-    font-weight: 500;
+    color: #fff;
 }
 
 .aboutUsButtons {
-    padding: 0 40px;
+    padding: 40px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px
@@ -378,6 +370,39 @@ nav li:first-child {
     margin: 0;
 }
 
+.aboutUsOptions {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.optionsNavItem {
+    display: block;
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    text-align: center;
+    border-bottom: solid 1px #efb225;
+    transition: 0.3s;
+}
+
+.aboutUsOptions li:hover {
+    color: #efb225;
+}
+
+.aboutUsOptions li.active {
+    color: #efb225;
+}
+
+.optionsTabContent {
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-top: none;
+    text-align: center;
+}
+
 /* SECTION GRID RECURSOS */
 
 #gridRecursosContainer {
@@ -408,7 +433,7 @@ nav li:first-child {
 }
 
 .gridRecursosTitle span {
-    background: #efb255;
+    background: #efb225;
     color: #ffffff;
     padding: 5px;
     border-radius: 50px;
@@ -456,11 +481,11 @@ nav li:first-child {
 
 /* GRID DOCS */
 
-.gridDocumentos {
+.gridDocumentos, .gridsPlataforma {
     background-color: #052c52;
 }
 
-.gridDocumentosh3 {
+.gridDocumentosh3, .gridsPlataformah3 {
     padding: 90px 0 20px 0;
     text-align: center;
     font-size: 33px;
@@ -468,48 +493,215 @@ nav li:first-child {
     font-weight: 500;
 }
 
-.gridDocumentosp {
+.gridDocumentosp, .gridsPlataformap {
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     width: 600px;
     margin: auto;
 }
 
-#gridDocsContainer {
+#gridDocsContainer, #gridsPlataformaContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-evenly;
 }
 
-#gridDocsContainer  {
+#gridDocsContainer, #gridsPlataformaContainer {
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
 }
 
-.gridDocsItem {
+.gridDocsItem, .gridsPlataformaItem {
     width: 25%;
     text-align: center;
     margin: 30px 0;
 }
 
-.gridDocsItem span {
+.gridDocsItem span, .gridsPlataformaItem span {
     font-size: 40px;
     color: #efb225;
     margin: 10px 0;
 }
 
-.gridDocsItemTitle {
+.gridDocsItemTitle, .gridsPlataformaItemTitle {
     margin: 5px;
     color: #ffffff;
     font-size: 20px;
     margin: 10px 0;
 }
 
-.gridDocsItemParagraph {
+.gridDocsItemParagraph, .gridsPlataformaParagraph {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
+
+/* SLIDER */
+
+.banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #242424;
+    overflow: hidden;
+}
+
+
+.sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: fade 1s;
+}
+
+.background {
+    background-image: linear-gradient(to right, white 45%, rgba(255, 255, 255, 0) 65%);
+    background-repeat: repeat-x;
+    height: 100%;
+}
+
+.backgroundContent {
+    padding: 85px 70px;
+}
+
+.sliderTitle {
+    color: #052c52;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.sliderParagraph {
+    width: 45%;
+    color: #6f7274;
+    font-size: 17px;
+}
+
+#imgEPI {
+    background-image: url('./Assets/Banners/img5.jpg');
+}
+
+#imgRiscos {
+    background-image: url('./Assets/Banners/img6.jpg');
+}
+
+#imgRelatorio {
+    background-image: url('./Assets/Banners/img7.jpg');
+}
+
+.slider-indicators>* {
+    background-color: #052c52 !important;
+}
+
+/* FORMS */
+
+.formText {
+    padding: 50px;
+}
+
+.formTextTilte {
+    color: #052c52;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.formTextParagraph {
+    color: #6f7274;
+    line-height: 2;
+}
+
+.formContainer {
+    display: flex;
+    gap: 50px;
+    padding: 0 50px;
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+}
+
+.formField label {
+    font-size: 18px;
+    color: #052c52;
+}
+
+.formField input, .formField textarea {
+    margin: 10px 0 50px;
+    border-radius: 5px;
+    padding: 13px 20px;
+    color: #052c52;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+.formField textarea {
+    padding: 11px 20px;
+    width: 450px;
+    height: 170px;
+}
+
+.buttonSubmitFormsDIV {
+    padding: 0 0 50px 50px;
+}
+
+.buttonSubmitForms {
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 13px;
+    background: #efb225;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #0e151b;
+}
+
+.footerContainer {
+    display: flex;
+    padding: 30px 90px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.footerContainer .infos {
+    width: 30%;
+}
+
+.infosH4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #6f7274;
+    text-transform: uppercase;
+}
+
+.infosH4 a {
+    color: #efb225;
+    outline: none;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.infosH4 a:hover {
+    text-decoration: underline;
+}
+
+
 
 @media (max-width: 1050px) {
 
@@ -546,33 +738,6 @@ nav li:first-child {
         padding: 50px 0;
     }
 
-    /* TABS */
-
-    .aboutUs {
-        padding: 60px 0;
-    }
-
-    .aboutUsContainer {
-        display: block;
-    }
-
-    .aboutUsTabs {
-        margin: 70px 0 0 0;
-        padding: 20px;
-    }
-
-    .aboutUsOptions {
-        height: 280px;
-    }
-
-    .aboutUsButtons {
-        padding: 20px 50px;
-    }
-
-    .optionsNavItem {
-        padding: 0;
-    }
-
     /* gridRecursos */
 
     .gridRecursosItem {
@@ -581,12 +746,23 @@ nav li:first-child {
 
     /* gridDocs */
 
-    .gridDocsItem {
+    .gridDocsItem, .gridsPlataformaItem {
         width: 35%;
     }
+
+
+
 }
 
 @media (max-width: 750px) {
+
+    /* TABS */
+
+    .optionsNav {
+        flex-direction: column;
+        gap: 0;
+    }
+
     /* gridRecursos */
 
     .gridRecursosItem {
@@ -595,8 +771,42 @@ nav li:first-child {
 
     /* gridDocs */
 
-    .gridDocsItem {
+    .gridDocsItem, .gridsPlataformaItem {
         width: 40%;
+    }
+
+    .sliderParagraph {
+        width: 65%;
+    }
+
+    .background {
+        background-image: linear-gradient(to right, white 60%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    /* FORM */
+
+    .formContainer {
+        gap: 30px;
+    }
+
+    .formField input, .formField textarea {
+        margin: 10px 0 20px;
+    }
+
+    .formField textarea {
+        width: 300px;
+    }
+
+    /* FOOTER */
+
+    .footerContainer {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .footerContainer .infos {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -607,6 +817,10 @@ nav li:first-child {
     }
 
     /* TABS */
+
+    .aboutUs {
+        padding: 0;
+    }
 
     .aboutUsContainer {
         padding: 0 10px;
@@ -622,11 +836,19 @@ nav li:first-child {
 
     /* gridDocs */
 
-    .gridDocsItem {
+    .gridDocsItem, .gridsPlataformaItem {
         width: 50%;
     }
 
-    .gridDocumentosp { 
+    .gridDocumentosp, .gridsPlataformap {
         width: auto;
+    }
+
+    .backgroundContent {
+        padding: 10px 20px;
+    }
+
+    #gridRecursosContainer {
+        padding: 0;
     }
 }

@@ -1,3 +1,14 @@
+/* Scroll Button */
+window.addEventListener("scroll", function () {
+  var topBtn = document.getElementById("topBtn");
+  if (window.scrollY > 100) {
+    // Altere 100 para a quantidade de scroll necessária
+    topBtn.classList.add("active");
+  } else {
+    topBtn.classList.remove("active");
+  }
+});
+
 /* Hamburguer Menu */
 
 function showSidebar() {
@@ -33,39 +44,32 @@ function openVerticalTabs(e, tabsId) {
   e.currentTarget.className += " active";
 }
 
-/* TABS OPTIONS */
-
 const tabsData = [
   {
     id: "defaultOpen",
     prop: "AboutUs",
     title: "Quem Somos",
-    paragraph:
-      "A Ammarhes Consultores em QSMS, criadora da plataforma, é uma empresa de consultoria sólida no mercado atuando há mais de 10 anos em todos os segmentos de Segurança e Saúde Ocupacional. Vimos a necessidade de criação da nossa própria plataforma online para gestão de SMS de forma a atender da melhor maneira possível aos nossos clientes, cumprindo todas as exigências de mercado. Trabalhamos com um sistema de controle online, disponibilizando acesso remoto aos itens contratados e eficiência a baixo custo. Temos solidez financeira, no ramo em que atuamos é fundamental a contratação de uma empresa consolidada e com tradição no mercado.",
+    paragraph: `A Ammarhes Consultores em QSMS, criadora da plataforma, é uma empresa de consultoria sólida no mercado atuando há mais de 10 anos em todos os segmentos de Segurança e Saúde Ocupacional. <br><br> Vimos a necessidade de criação da nossa própria plataforma online para gestão de SMS de forma a atender da melhor maneira possível aos nossos clientes, cumprindo todas as exigências de mercado.<br><br> Trabalhamos com um sistema de controle online, disponibilizando acesso remoto aos itens contratados e eficiência a baixo custo. Temos solidez financeira, no ramo em que atuamos é fundamental a contratação de uma empresa consolidada e com tradição no mercado.`,
   },
   {
     prop: "History",
     title: "Nossa História",
-    paragraph:
-      "A Ammarhes nasceu como equipe de consultores especializados em Saúde Ocupacional, Meio Ambiente e Segurança do Trabalho, um grupo multidisciplinar que cresceu em direção ao desenvolvimento de sistemas de gestão, incorporando ao seu portifólio a Assessoria na aplicação de diversas Normas como as ISO 14001, ISO 9001, NBR 16001 e SA 8000. Somos registrados no CREA, com emissão de ART (Anotação de Responsabilidade Técnica) nas atividades de Engenharia, com ênfase em Segurança do Trabalho e meio ambiente; e no CRM pelo Médico-Coordenador.",
+    paragraph: `A Ammarhes nasceu como equipe de consultores especializados em Saúde Ocupacional, Meio Ambiente e Segurança do Trabalho, um grupo multidisciplinar que cresceu em direção ao desenvolvimento de sistemas de gestão, incorporando ao seu portifólio a Assessoria na aplicação de diversas Normas como as ISO 14001, ISO 9001, NBR 16001 e SA 8000. <br><br>Somos registrados no CREA, com emissão de ART (Anotação de Responsabilidade Técnica) nas atividades de Engenharia, com ênfase em Segurança do Trabalho e meio ambiente; e no CRM pelo Médico-Coordenador.`,
   },
   {
     prop: "Differential",
     title: "Nosso Diferencial",
-    paragraph:
-      "Graças a grande experiência adquirida pela empresa no ramo da consultoria de Saúde e Segurança do Trabalho a plataforma Agenda Técnica Sistemas pôde ser criada de forma intuitiva trazendo agilidade na criação e consulta de todo o conteúdo de gestão de SMS, além de vir pronta para atender as exigências do eSocial",
+    paragraph: `Graças a grande experiência adquirida pela empresa no ramo da consultoria de Saúde e Segurança do Trabalho a plataforma Agenda Técnica Sistemas pôde ser criada de forma intuitiva trazendo agilidade na criação e consulta de todo o conteúdo de gestão de SMS, além de vir pronta para atender as exigências do eSocial`,
   },
   {
     prop: "Proposal",
     title: "Nossa Proposta",
-    paragraph:
-      "Graças a grande experiência adquirida pela empresa no ramo da consultoria de Saúde e Segurança do Trabalho a plataforma Agenda Técnica Sistemas pôde ser criada de forma intuitiva trazendo agilidade na criação e consulta de todo o conteúdo de gestão de SMS, além de vir pronta para atender as exigências do eSocial.",
+    paragraph: `A Agenda Técnica Sistemas tem como objetivo se tornar a solução completa e definitiva para a gestão de Saúde e Segurança do Trabalho. <br><br>Sendo acessível por qualquer dispositivo com acesso a internet, fica fácil e rápido ter acesso a todos os documentos importantes agilizando as tarefas do dia-a-dia e trazendo segurança e confiabilidade para as empresas diante do eSocial.`,
   },
   {
     prop: "LearnMore",
     title: "Veja Mais",
-    paragraph:
-      "Rápida, fácil e descomplicada! Trazendo tecnologia integrada a segurança, nossa plataforma se propõe a resolver todas as questões documentais da área de Saúde, Meio Ambiente e Segurança de maneira intuitiva e confiável. Pois se baseia em tecnologia de inteligência artificial para montagem dos documentos, minimizando os erros comuns e tornando mais eficiente as confecções dos mesmos.",
+    paragraph: `Rápida, fácil e descomplicada! Trazendo tecnologia integrada a segurança, nossa plataforma se propõe a resolver todas as questões documentais da área de Saúde, Meio Ambiente e Segurança de maneira intuitiva e confiável. <br><br>Pois se baseia em tecnologia de inteligência artificial para montagem dos documentos, minimizando os erros comuns e tornando mais eficiente as confecções dos mesmos.`,
   },
 ];
 
@@ -94,7 +98,7 @@ tabsData.forEach((data) => {
   const li = document.createElement("li");
   li.classList.add("optionsTabContent");
   li.setAttribute("id", `${data.prop}`);
-  li.textContent = data.paragraph;
+  li.innerHTML = data.paragraph;
   ulTabs.appendChild(li);
   aboutUsTabs.appendChild(ulTabs);
 });
@@ -251,4 +255,128 @@ gridDocsData.forEach((data) => {
   gridDocsItem.appendChild(paragraph);
 
   gridDocsContainer.appendChild(gridDocsItem);
+});
+
+/* PLATAFORM */
+
+const plataformData = [
+  {
+    icon: "bi bi-file-earmark-medical-fill",
+    title: "PCMSO",
+    text: "Anotação de responsabilidade técnica",
+  },
+  {
+    icon: "bi bi-search",
+    title: "PGR",
+    text: "Elaboração de mapa de risco para fácil visualização das exposições nos ambientes",
+  },
+  {
+    icon: "bi bi-map",
+    title: "EPC",
+    text: "Gerenciamento de equipamentos de proteção coletiva, assim como medidas mitigadoras para melhora da segurança",
+  },
+  {
+    icon: "bi bi-graph-up",
+    title: "Indicadores",
+    text: "Crie e gerencie indicadores importantes para acompanhamento",
+  },
+];
+
+const plataformContainer = document.getElementById("gridsPlataformaContainer");
+
+plataformData.forEach((data) => {
+  const gridsPlataformaItem = document.createElement("div");
+  gridsPlataformaItem.classList.add("gridsPlataformaItem");
+
+  const icon = document.createElement("span");
+  icon.innerHTML = `<i class="${data.icon}"></i>`;
+
+  const title = document.createElement("p");
+  title.classList.add("gridsPlataformaItemTitle");
+  title.textContent = data.title;
+
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("gridsPlataformaItemParagraph");
+  paragraph.textContent = data.text;
+
+  gridsPlataformaItem.appendChild(icon);
+  gridsPlataformaItem.appendChild(title);
+  gridsPlataformaItem.appendChild(paragraph);
+
+  plataformContainer.appendChild(gridsPlataformaItem);
+});
+
+/* SLIDER */
+
+const sliderData = [
+  {
+    title: "Entrega de EPI",
+    pContent: `Em conformidade com a Norma Regulamentadora 6 do
+  MTE (Ministério do Trabalho e Emprego), a plataforma consegue executar a gestão de
+  Equipamentos de Proteção Individuais com seus dados mais importantes: <br> <br>
+  cadastros,
+  características, prazos de entrega, reposição e compra, além da validade de
+  vencimento e
+  certificado de aprovação (CA).
+  <br> <br>Desta forma, os gestores e colaboradores serão notificados evitando assim
+  quaisquer
+  problemas com segurança e documentação.
+  <br> <br>A plataforma ainda conta com módulo de gestão de EPI por biometria
+  garantindo
+  segurança e agilidade com os colaboradores.`,
+    id: "imgEPI",
+  },
+  {
+    title: "Exposição dos riscos GHE",
+    pContent: `A plataforma, através da sua guia de GHE (Grupo Homogêneo de
+    Exposição), mapeia os riscos de mesmo grau aos colaboradores, gerando assim um grupo
+    onde eles estão expostos a um risco comum.
+    <br> <br> Dessa forma é possível organizar gerir as
+    avaliações ambientais e exames que deverão ser feitos nesses grupos de maneira mais
+    fácil, assim como seu acompanhamento.
+    <br> <br>Com esse procedimento fica mais simples para determinar e adotar medidas de
+    prevenção de acidentes de trabalho nos grupos de exposição comuns, assim como
+    avaliar e
+    acompanhar a evolução dos valores encontrados nas avaliações e na saúde dos
+    colaboradores.`,
+    id: "imgRiscos",
+  },
+  {
+    title: "Relatório",
+    pContent: `Gere relatórios de maneira fácil e descomplicada, além de
+  criar
+  indicadores necessários para acompanhamentos específicos de dados. <br><br>
+  O usuário pode fazer o download dos relatórios gerados em PDF.
+`,
+    id: "imgRelatorio",
+  },
+];
+
+const sliderContainer = document.getElementById("slider");
+
+sliderData.forEach((data) => {
+  const sliderImage = document.createElement("li");
+  sliderImage.classList.add("sliderImage");
+  sliderImage.id = data.id;
+
+  const background = document.createElement("div");
+  background.classList.add("background");
+
+  const backgroundContent = document.createElement("div");
+  backgroundContent.classList.add("backgroundContent");
+
+  const sliderTitle = document.createElement("h2");
+  sliderTitle.classList.add("sliderTitle");
+  sliderTitle.textContent = data.title;
+
+  const sliderParagraph = document.createElement("p");
+  sliderParagraph.classList.add("sliderParagraph");
+  sliderParagraph.innerHTML = data.pContent;
+
+  backgroundContent.appendChild(sliderTitle);
+  backgroundContent.appendChild(sliderParagraph);
+  background.appendChild(backgroundContent);
+  sliderImage.appendChild(background);
+
+  sliderContainer.appendChild(sliderImage);
 });
