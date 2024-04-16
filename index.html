@@ -46,52 +46,35 @@
         defer></script>
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
         crossorigin="anonymous">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 
 <body>
     <header>
         <nav class="navContainer">
-            <div class="navLogoDiv"> <a href="#"><img class="navLogo" src="./Assets/Logo/logo.png"
+            <div class="navLogoDiv"> <a href="/"><img class="navLogo" src="./Assets/Logo/logo.png"
                         alt="Logo Agenda Tecnica"></a>
             </div>
             <!-- Menu Mobile -->
             <ul class="navItensContainerMobile">
                 <li onclick=hideSidebar()><a href="#"><img src="../Assets/IMGS/closeIconHamburguerMenu.svg"
                             alt="Icon Hamburguer Menu"></a></li>
-                <li><a class="navItem" href="#">Início</a></li>
-                <div class="navDropdown">
-                    <button class="navDropBtn" href="#">Sobre <i class="bi bi-chevron-down"></i></button>
-                    <div class="navDropBtnContent">
-                        <a class="navDropBtnItem" href="#">Recursos</a>
-                        <a class="navDropBtnItem" href="#">Aplicações</a>
-                        <a class="navDropBtnItem" href="#">Segurança do Trabalho</a>
-                        <a class="navDropBtnItem" href="#">Saúde Ocupacional</a>
-                        <a class="navDropBtnItem" href="#">Preços</a>
-                        <a class="navDropBtnItem" href="#">Telas</a>
-                    </div>
-                </div>
-                <li><a class="navItem" href="#">Orçamento</a></li>
-                <li><a class="navItem" href="#">Consultoria</a></li>
-                <li><a class="navItem" href="#" id="navContactButton">Contato</a></li>
+                <li><a class="hideOnMobile" href="/">Início</a></li>
+                <li><a class="hideOnMobile" href="#aboutUs">Sobre</a></li>
+                <li><a class="hideOnMobile" href="formsOrcamento/forms.html">Orçamento</a></li>
+                <li><a class="hideOnMobile" href="#gridDocs">Serviços</a></li>
+                <li><a class="hideOnMobile" href="#formsContato" id="navContactButton">Contato</a></li>
             </ul>
             <!-- Menu Desktop -->
             <ul class="navItensContainerDesktop">
-                <li><a class="hideOnMobile" href="#">Início</a></li>
-                <div class="hideDivOnMobile">
-                    <button class="hideOnMobile" href="#">Sobre <i class="bi bi-chevron-down"></i></button>
-                    <div class="navDropBtnContent">
-                        <a class="navDropBtnItem" href="#">Recursos</a>
-                        <a class="navDropBtnItem" href="#">Aplicações</a>
-                        <a class="navDropBtnItem" href="#">Segurança do Trabalho</a>
-                        <a class="navDropBtnItem" href="#">Saúde Ocupacional</a>
-                        <a class="navDropBtnItem" href="#">Preços</a>
-                        <a class="navDropBtnItem" href="#">Telas</a>
-                    </div>
-                </div>
-                <li><a class="hideOnMobile" href="#">Orçamento</a></li>
-                <li><a class="hideOnMobile" href="#">Consultoria</a></li>
-                <li><a class="hideOnMobile" href="#" id="navContactButton">Contato</a></li>
+                <li><a class="hideOnMobile" href="/">Início</a></li>
+                <li><a class="hideOnMobile" href="#aboutUs">Sobre</a></li>
+                <li><a class="hideOnMobile" href="formsOrcamento/forms.html">Orçamento</a></li>
+                <li><a class="hideOnMobile" href="#gridDocs">Serviços</a></li>
+                <li><a class="hideOnMobile" href="#formsContato" id="navContactButton">Contato</a></li>
                 <div class="socialMidiasContainer">
                     <a class="socialMidiaIcon" href="https://www.facebook.com/Agenda-T%C3%A9cnica-100669640753272/"
                         target="_blank"><i class="bi bi-facebook"></i></a>
@@ -128,10 +111,11 @@
                         integraliza os documentos.
                     </p>
                     <div class="homeImageTextLinks">
-                        <a href="#" id="homeImageTextButtonResource">Recursos<i class="bi bi-chevron-right"></i></a>
-                        <a href="#" id="homeImageTextButtonBudget">Fazer orçamento <i
+                        <!--                         <a href="#" id="homeImageTextButtonResource">Recursos<i class="bi bi-chevron-right"></i></a>
+ --> <a href="/formsOrcamento/forms.html" id="homeImageTextButtonBudget">Fazer orçamento <i
                                 class="bi bi-chevron-right"></i></a>
-                        <a href="#" id="homeImageTextButtonBuy"> Comprar <i class="bi bi-chevron-right"></i></a>
+                        <!--                         <a href="#" id="homeImageTextButtonBuy"> Comprar <i class="bi bi-chevron-right"></i></a>
+ -->
                     </div>
                 </div>
                 <div class="homeImageForms">
@@ -141,6 +125,9 @@
                             <input type="email" name="usuario" placeholder="Usuario/E-mail">
                             <input type="password" name="senha" placeholder="Sua senha">
                         </div><br>
+                        <div id="recaptchaContainer" class="g-recaptcha"
+                            data-sitekey="6Lct3LwpAAAAAD28yaJAJP2vclCnfUHG1Rk4RLve" data-callback="handleRecaptcha">
+                        </div>
                         <button class="homeImageFormsSubmit" type="submit">Login</button>
                     </form>
                 </div>
@@ -148,7 +135,7 @@
         </section>
 
         <!-- ABOUT  -->
-        <section class="aboutUs">
+        <section class="aboutUs" id="aboutUs">
             <div class="aboutUsTitle">
                 <span>um pouco sobre nós</span>
                 <h2>Criadores da plataforma Agenda Técnica Sistemas</h2>
@@ -160,9 +147,49 @@
                 </div>
             </div>
             <div class="aboutUsButtons">
-                <a href="#" id="aboutUsButtonLearnMore">Saiba Mais <i class="bi bi-chevron-right"></i></a>
-                <a href="#" id="aboutUsButtonAmmarhes">Conheça A Ammarhes <i class="bi bi-chevron-right"></i></a>
-                <a href="#" id="aboutUsButtonQuestions"> Alguma dúvida?</a>
+                <!--                 <a href="#" id="aboutUsButtonLearnMore">Saiba Mais <i class="bi bi-chevron-right"></i></a>
+ --> <a href="https://ammarhes.com.br/" target="_blank" id="aboutUsButtonAmmarhes">Conheça A Ammarhes <i
+                        class="bi bi-chevron-right"></i></a>
+                <!--                 <a href="#" id="aboutUsButtonQuestions"> Alguma dúvida?</a>
+ -->
+            </div>
+        </section>
+
+        <!-- empresas -->
+        <section class="empresas">
+            <div class="otherCompanies">
+                <h3 class="otherCompaniesH3">Conheça nossas empresas</h3>
+                <div class="otherCompaniesLogos">
+                    <div class="divLink">
+                        <a target="_blank" href="https://ammarhes.com.br/">
+                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoAmmarhesWrite.png"
+                                alt="Logo Ammarhes">
+                        </a>
+                        <a target="_blank" href="https://ammarhes.com.br/" class="aButtons">Clique e Acesse</a>
+                    </div>
+                    <div class="divLink">
+                        <a target="_blank" href="https://casaocupacional.com.br/">
+                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoCasa.png"
+                                alt="Logo Casa Ocupacional">
+                        </a>
+                        <a target="_blank" href="https://casaocupacional.com.br/" class="aButtons">Clique e Acesse</a>
+                    </div>
+                    <div class="divLink">
+                        <a target="_blank" href="https://www.agendatecnica.com.br/">
+                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoAgenda.png"
+                                alt="Logo Agenda Técnica">
+                        </a>
+                        <a target="_blank" href="https://www.agendatecnica.com.br/" class="aButtons">Clique e
+                            Acesse</a>
+                    </div>
+                    <div class="divLink">
+                        <a target="_blank" href="https://saude10clinica.com.br/">
+                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoSaude10.png" alt="Logo Saúde 10"
+                                id="saude10">
+                        </a>
+                        <a target="_blank" href="https://saude10clinica.com.br/" class="aButtons">Clique e Acesse</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -173,7 +200,7 @@
         </section>
 
         <!-- GRID DOCUMENTOS -->
-        <section class="gridDocumentos">
+        <section class="gridDocumentos" id="gridDocs">
             <h3 class="gridDocumentosh3">Documentos legais de Segurança do Trabalho</h3>
             <p class="gridDocumentosp">A tecnologia da nossa plataforma garante integração com o eSocial com emissão de
                 documentos dentro do
@@ -210,62 +237,117 @@
         </section>
 
         <!-- FORM -->
-
-        <div class="formText">
-            <h2 class="formTextTilte">Fale conosco</h2>
-            <p class="formTextParagraph">Alguma dúvida? Nos envie uma mensagem!<br>Você também pode fazer um orçamento
-                gratuitamente clicando no botão abaixo:</p>
-        </div>
-        <form action="/submit" method="POST">
+        <section id="formsContato">
+            <div class="formText">
+                <h2 class="formTextTilte">Fale conosco</h2>
+                <p class="formTextParagraph">Alguma dúvida? Nos envie uma mensagem!<br>Você também pode fazer um
+                    orçamento
+                    gratuitamente clicando no botão abaixo:</p>
+            </div>
             <div class="formContainer">
-                <div class="formField">
-                    <label for="nome">Nome:</label><br>
-                    <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
+                <form action="" method="POST">
+                    <div class="formField">
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome" required placeholder="Informe seu nome"><br>
+                    </div>
+                    <div class="formField">
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
-                </div>
-                <div class="formField">
-                    <label for="telefone">Telefone:</label><br>
-                    <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" required
-                        placeholder="Informe seu telefone"><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required placeholder="Informe seu email"><br>
+                    </div>
+                    <div class="formField">
+                        <label for="telefone">Telefone:</label><br>
+                        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" required
+                            placeholder="Informe seu telefone"><br>
+                    </div>
+                    <div class="formField">
 
-                    <label for="assunto">Assunto:</label><br>
-                    <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
-                </div>
+                        <label for="assunto">Assunto:</label><br>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto"><br>
+                    </div>
 
-                <div class="formField">
-                    <label for="mensagem">Mensagem:</label><br>
-                    <textarea id="mensagem" name="mensagem" rows="4" required
-                        placeholder="Digite sua mensagem"></textarea><br>
-                </div>
+                    <div class="formField">
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="4" required
+                            placeholder="Digite sua mensagem"></textarea><br>
+                    </div>
 
+                    <div class="buttonSubmitFormsDIV">
+
+                        <div id="recaptchaContainer" class="g-recaptcha"
+                            data-sitekey="6Lct3LwpAAAAAD28yaJAJP2vclCnfUHG1Rk4RLve" data-callback="handleRecaptcha">
+                        </div>
+                        <button id="submitButton" class="buttonSubmitForms disabled" disabled
+                            type="submit">Enviar</button>
+
+                    </div>
+                </form>
             </div>
-            </div>
-            <div class="buttonSubmitFormsDIV">
-                <button class="buttonSubmitForms" type="submit">Enviar</button>
-            </div>
-        </form>
+        </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footerContainer">
-            <div class="logo">
-                <img src="./Assets/Logo/logo.png" alt="Logo Agenda">
+        <div class="footer-container">
+            <div class="footer-content"><img src="./Assets/Logo/logo.png" alt="Logo Agenda Tecnica">
+                <p>Agenda Técnica Sistemas de Segurança e Saúde do Trabalhador
+                    <br><br>CNPJ: 10.642.576/0001-06
+                </p>
             </div>
-            <div class="infos">
-                <h4 class="infosH4">AGENDA TECNICA SISTEMAS DE SEGURANCA E SAUDE DO TRABALHADOR LTDA - CNPJ:
-                    <strong>10.642.576/0001-06</strong>
-                </h4>
-                <h4 class="infosH4">Contato: <a href="tel:+552122629752">(21)
-                        3570-9541 / 2262-9752</a></h4>
-                <h4 class="infosH4">
-                    Email de contatos gerais:
-                    <a href="mailto:relacionamento@ammarhes.com.br">relacionamento@ammarhes.com.br</a>
-                    <a href="mailto:contato@agendatecnica.com.br">contato@agendatecnica.com.br</a>
-                </h4>
+            <div class="footer-content1">
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552135491640">+55 (21) 3549-1640</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552120260011">+55 (21) 2026-0011</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                        </path>
+                    </svg><a class="span-footer" href="tel:+552122629752">+55 (21) 2262-9752</a></p>
+                <p><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M460.6 147.3L353 256.9c-.8.8-.8 2 0 2.8l75.3 80.2c5.1 5.1 5.1 13.3 0 18.4-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8l-75-79.9c-.8-.8-2.1-.8-2.9 0L313.7 297c-15.3 15.5-35.6 24.1-57.4 24.2-22.1.1-43.1-9.2-58.6-24.9l-17.6-17.9c-.8-.8-2.1-.8-2.9 0l-75 79.9c-2.5 2.5-5.9 3.8-9.2 3.8s-6.7-1.3-9.2-3.8c-5.1-5.1-5.1-13.3 0-18.4l75.3-80.2c.7-.8.7-2 0-2.8L51.4 147.3c-1.3-1.3-3.4-.4-3.4 1.4V368c0 17.6 14.4 32 32 32h352c17.6 0 32-14.4 32-32V148.7c0-1.8-2.2-2.6-3.4-1.4z">
+                        </path>
+                        <path
+                            d="M256 295.1c14.8 0 28.7-5.8 39.1-16.4L452 119c-5.5-4.4-12.3-7-19.8-7H79.9c-7.5 0-14.4 2.6-19.8 7L217 278.7c10.3 10.5 24.2 16.4 39 16.4z">
+                        </path>
+                    </svg><a href="mailto:comercial@ammarhes.com.br">Comercial:<span class="span-footer">
+                            comercial@ammarhes.com.br</span></a></p>
             </div>
+        </div>
+        <hr>
+        <div class="bottom-footer">
+            <div class="socialMedias"><a href="https://www.facebook.com/Ammarhesconsultoria/"
+                    aria-label="https://www.facebook.com/Ammarhesconsultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
+                        </path>
+                    </svg></a><a href="https://www.linkedin.com/in/ammarhesconsultoria/"
+                    aria-label="https://www.linkedin.com/in/ammarhesconsultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+                        </path>
+                    </svg></a><a href="https://www.instagram.com/ammarhesconsultoria/"
+                    aria-label="https://www.instagram.com/ammarhesconsultoria/" target="_blank"><svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em"
+                        width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                        </path>
+                    </svg></a></div>© 2024 Copyright:<p>Ammarhes: </p>
         </div>
     </footer>
     <a href="#" id="topBtn" class="top"></a>

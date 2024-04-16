@@ -380,3 +380,11 @@ sliderData.forEach((data) => {
 
   sliderContainer.appendChild(sliderImage);
 });
+
+/* FORM */
+
+function handleRecaptcha() {
+  let button = document.getElementById("submitButton");
+  button.disabled = false;
+  button.classList.remove("disabled");
+}

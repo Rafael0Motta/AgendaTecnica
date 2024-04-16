@@ -255,7 +255,7 @@ nav li:first-child {
     background-color: #052c52;
 }
 
-/* FORM */
+/* FORMHOME*/
 
 .formHomeImage {
     background-color: #ffffff;
@@ -299,6 +299,56 @@ nav li:first-child {
 .homeImageFormsSubmit:hover {
     background-color: #efb225;
 }
+
+/* EMPRESAS */
+
+.otherCompanies {
+    background: #052c52;
+    padding: 50px;
+}
+
+.otherCompaniesH3 {
+    text-align: center;
+    font-size: 33px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.otherCompaniesLogos {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.divLink {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.otherCompaniesLogosImgs {
+    height: 75px;
+    width: 200px;
+}
+
+#saude10 {
+    width: 150px;
+}
+
+.aButtons {
+    border-bottom: 1px solid #052c52;
+    color: #fff;
+    text-decoration: none;
+}
+
+.aButtons:hover {
+    border-bottom: solid 1px #fff;
+}
+
 
 /* TABS */
 .aboutUs {
@@ -489,7 +539,7 @@ nav li:first-child {
     padding: 90px 0 20px 0;
     text-align: center;
     font-size: 33px;
-    color: #efb225;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -602,8 +652,14 @@ nav li:first-child {
 
 /* FORMS */
 
+.formContainer {
+    margin: 20px auto;
+    width: 50%;
+}
+
 .formText {
     padding: 50px;
+    text-align: center;
 }
 
 .formTextTilte {
@@ -618,13 +674,6 @@ nav li:first-child {
     line-height: 2;
 }
 
-.formContainer {
-    display: flex;
-    gap: 50px;
-    padding: 0 50px;
-    margin: 0 0 20px;
-    flex-wrap: wrap;
-}
 
 .formField label {
     font-size: 18px;
@@ -632,22 +681,18 @@ nav li:first-child {
 }
 
 .formField input, .formField textarea {
-    margin: 10px 0 50px;
+    margin: 10px 0 25px;
     border-radius: 5px;
-    padding: 13px 20px;
+    padding: 10px;
+    width: 100%;
     color: #052c52;
     border: 1px solid #ced4da;
     font-size: 14px;
 }
 
-.formField textarea {
-    padding: 11px 20px;
-    width: 450px;
-    height: 170px;
-}
 
 .buttonSubmitFormsDIV {
-    padding: 0 0 50px 50px;
+    padding: 0 0 50px;
 }
 
 .buttonSubmitForms {
@@ -661,47 +706,69 @@ nav li:first-child {
     text-transform: uppercase;
 }
 
-/* FOOTER */
-
-footer {
-    background-color: #0e151b;
-}
-
-.footerContainer {
-    display: flex;
-    padding: 30px 90px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    width: 250px;
-}
-
-.footerContainer .infos {
-    width: 30%;
-}
-
-.infosH4 {
-    font-size: 12px;
-    margin-bottom: 10px;
-    color: #6f7274;
-    text-transform: uppercase;
-}
-
-.infosH4 a {
-    color: #efb225;
-    outline: none;
-    text-decoration: none;
-    font-weight: 500;
+.g-recaptcha {
     margin: 10px 0;
 }
 
-.infosH4 a:hover {
-    text-decoration: underline;
+.disabled {
+    opacity: 0.5;
 }
 
+/* FOOTER */
 
+footer {
+    background: #052c52;
+    padding: 25px;
+}
+
+.footer-container {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-content img {
+    width: 250px;
+}
+
+.footer-content p {
+    margin: 10px;
+    width: 50%;
+}
+
+.footer-content1 p {
+    margin: 3px;
+}
+
+.bottom-footer {
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+}
+
+.socialMedias {
+    display: flex;
+    font-size: 30px;
+    gap: 50px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.bottom-footer a, .span-footer, .footer-content1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.span-footer:hover, .footer-content1 a:hover {
+    border-bottom: solid 1px #fff;
+}
+
+.footer-content1 a {
+    margin: 10px;
+}
 
 @media (max-width: 1050px) {
 
@@ -750,8 +817,25 @@ footer {
         width: 35%;
     }
 
+    .otherCompaniesLogos {
+        gap: 40px;
+    }
+}
 
+@media (max-width:900px) {
 
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-content p {
+        width: 100%;
+    }
+
+    .footer-content1 {
+        text-align: center;
+        margin: 10px;
+    }
 }
 
 @media (max-width: 750px) {

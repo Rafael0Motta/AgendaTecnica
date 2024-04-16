@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.top {
+    --offset: 50px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+    /* Começa escondido */
+
+    /* Restante do seu estilo */
+    width: 45px;
+    aspect-ratio: 1;
+    background: #efb225;
+    border-radius: 10px;
+}
+
+.top.active {
+    visibility: visible;
+    /* Aparece quando a classe ativa é adicionada */
+}
+
+.top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+
+/* NAV */
+
+.navContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+    background: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navLogo {
+    width: 150px;
+}
+
+.navItensContainerDesktop {
+    display: flex;
+    align-items: center;
+}
+
+.navDropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.navItem, .navDropBtn, .hideOnMobile {
+    font-size: 15px;
+    padding: 13px 14px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    color: #052c52;
+    transition: 0.5s ease-out;
+}
+
+#navContactButton {
+    border: solid 2px #efb225;
+    border-radius: 5px;
+}
+
+.hideOnMobile, .navDropBtn {
+    border: none;
+    background: none;
+}
+
+.navItem:hover, .hideOnMobile:hover, .socialMidiaIcon:hover, .navDropBtn:hover {
+    color: #efb225;
+    background-color: #052c52;
+    border-radius: 5px;
+    border: none;
+}
+
+.navDropBtnContent {
+    display: none;
+    min-width: 170px;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.navDropBtnItem {
+    float: none;
+    color: #6f7274;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    text-align: left;
+}
+
+.navDropBtnItem:hover {
+    color: #052c52;
+    background-color: #f1f1f1;
+}
+
+.navDropdown:hover .navDropBtnContent, .hideDivOnMobile:hover .navDropBtnContent {
+    display: block;
+    cursor: pointer;
+}
+
+.socialMidiaIcon {
+    padding: 11px;
+    color: #efb225;
+}
+
+.callNavContainer {
+    padding: 1% 25px;
+    background: #052c52;
+    margin: 0 0 0 25px;
+}
+
+.callNavNumbers, .callNavText {
+    font-size: 11px;
+    color: #efb225;
+    display: block;
+    margin: 10px 0;
+}
+
+.callNavText {
+    font-size: 13px;
+}
+
+.callNavText i {
+    margin: 0 5px 0 0;
+}
+
+/* NAV MOBILE */
+
+nav ul {
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.navItensContainerMobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px;
+}
+
+.navItensContainerMobile li {
+    width: 100%;
+}
+
+.navItensContainerMobile a {
+    width: 100%;
+}
+
+.menuCloseButtonMobile {
+    display: none;
+}
+
+/* FORMS */
+
+.formContainer {
+    margin: 20px auto;
+    width: 75%;
+}
+
+.formQuestions {
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.formText {
+    padding: 50px;
+    text-align: center;
+}
+
+.formTextTilte {
+    color: #052c52;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.formTextParagraph {
+    color: #6f7274;
+    line-height: 2;
+}
+
+
+.formField label {
+    font-size: 18px;
+    color: #052c52;
+}
+
+.formField input, .formField textarea {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #052c52;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+.servicosInteresseOptions {
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    display: grid;
+    margin: 15px 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.formCheck {
+    margin: 5px;
+}
+
+.formCheckLabel {
+    margin: 10px;
+}
+
+#mensagem {
+    display: none;
+}
+
+.buttonSubmitForms {
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 13px;
+    background: #efb225;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.g-recaptcha {
+    margin: 10px 0;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+/* FOOTER */
+
+
+footer {
+    background: #052c52;
+    padding: 25px;
+}
+
+.footer-container {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-content img {
+    width: 250px;
+}
+
+.footer-content p {
+    margin: 10px;
+    width: 50%;
+}
+
+.footer-content1 p {
+    margin: 3px;
+}
+
+.bottom-footer {
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+}
+
+.socialMedias {
+    display: flex;
+    font-size: 30px;
+    gap: 50px;
+    justify-content: center;
+    margin: 10px;
+}
+
+.bottom-footer a, .span-footer, .footer-content1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.span-footer:hover, .footer-content1 a:hover {
+    border-bottom: solid 1px #fff;
+}
+
+.footer-content1 a {
+    margin: 10px;
+}
+
+@media (max-width: 1050px) {
+
+    /* NAV */
+
+    .navContainer {
+        justify-content: space-between;
+    }
+
+    #navContactButton {
+        margin-left: 5px;
+    }
+
+    .hideOnMobile, .callNavContainer {
+        display: none;
+    }
+
+    .menuCloseButtonMobile {
+        margin-left: 20px;
+    }
+
+    .menuCloseButtonMobile {
+        display: block;
+    }
+
+    .formQuestions {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@media (max-width:900px) {
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-content p {
+        width: 100%;
+    }
+
+    .footer-content1 {
+        text-align: center;
+        margin: 10px;
+    }
+}
