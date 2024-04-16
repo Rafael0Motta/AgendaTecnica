@@ -73,6 +73,17 @@
     transition: 0.5s ease-out;
 }
 
+#navContactButton {
+    background: #efb225;
+    border-radius: 5px;
+    color: #052c52;
+}
+
+#navContactButton:hover {
+    background-color: #052c52;
+    color: #efb225;
+}
+
 .hideOnMobile, .navDropBtn {
     border: none;
     background: none;
