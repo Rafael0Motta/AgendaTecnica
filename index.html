@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Tecnica</title>
-    <link rel="icon" href="./Assets/Logo/logo.ico">
+    <title>Agenda Técnica</title>
 
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="Assets/Logo/logo.ico" type="image/x-icon">
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- BANNER -->
-    <link rel="preload" href="./Assets/Banners/BannerImageHome.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img10.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img9.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img8.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img7.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img6.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img5.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img4.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img3.jpg" as="image" />
-    <link rel="preload" href="./Assets/Banners/img2.jpg" as="image" />
+    <!-- GOOGLE RECAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <!-- Whastapp Button -->
+    <!-- ICONS BST -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- WPP BUTTON -->
     <link rel="stylesheet"
         href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <a id="robbu-whatsapp-button" class="left" target="_blank" href="https://api.whatsapp.com/send?phone=5521980870029">
@@ -32,167 +32,132 @@
             src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- BANNER -->
+    <link rel="preload" href="./Assets/Banners/BannerImageHome.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img2.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img5.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img6.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img7.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img8.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img9.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img10.jpg" as="image" />
+    <link rel="preload" href="./Assets/Banners/img11.jpg" as="image" />
 
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- slider -->
-    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
-        defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+    <!-- LOGOS -->
+    <link rel="preload" href="./Assets/Logo/LogoAgenda.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoAmmarhesWrite.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoCasa.png" as="image" />
+    <link rel="preload" href="./Assets/Logo/LogoSaude10.png" as="image" />
 </head>
-
 
 <body>
     <header>
         <nav class="navContainer">
-            <div class="navLogoDiv"> <a href="/"><img class="navLogo" src="./Assets/Logo/LogoAgenda.png"
-                        alt="Logo Agenda Tecnica"></a>
+            <div class="navLogoDiv">
+                <a href="/">
+                    <img id="teste" src="./Assets//Logo/LogoAgenda.png" alt="Logo Agenda Técnica" class="navLogo">
+                </a>
             </div>
-            <!-- Menu Mobile -->
+            <!-- MENU MOBILE -->
             <ul class="navItensContainerMobile">
-                <li onclick=hideSidebar()><a href="#"><img src="../Assets/IMGS/closeIconHamburguerMenu.svg"
-                            alt="Icon Hamburguer Menu"></a></li>
-                <li><a class="hideOnMobile" href="/">Início</a></li>
-                <li><a class="hideOnMobile" href="#aboutUs">Sobre</a></li>
-                <li><a class="hideOnMobile" href="formsOrcamento/forms.html">Orçamento</a></li>
-                <li><a class="hideOnMobile" href="#gridDocs">Serviços</a></li>
-                <li><a class="hideOnMobile" href="#formsContato" id="navContactButton">Contato</a></li>
+                <li onclick=hideSidebar()>
+                    <a href="#">
+                        <img src="./Assets/IMGS/closeIconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="/">Início</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#aboutUsSection">Sobre</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="formsOrcamento/forms.html">Orçamento</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#gridDocsSection"> Serviços</a>
+                </li>
+                <li>
+                    <a class="showOnMobile" href="#formsContato" id="navContactButtonMobile">Contato</a>
+                </li>
             </ul>
-            <!-- Menu Desktop -->
+
+            <!-- MENU DESKTOP -->
             <ul class="navItensContainerDesktop">
-                <li><a class="hideOnMobile" href="/">Início</a></li>
-                <li><a class="hideOnMobile" href="#aboutUs">Sobre</a></li>
-                <li><a class="hideOnMobile" href="formsOrcamento/forms.html">Orçamento</a></li>
-                <li><a class="hideOnMobile" href="#gridDocs">Serviços</a></li>
-                <li><a class="hideOnMobile" href="#formsContato" id="navContactButton">Contato</a></li>
+                <li>
+                    <a href="/" class="hideOnMobile">Início</a>
+                </li>
+                <li>
+                    <a href="#aboutUsSection" class="hideOnMobile">Sobre</a>
+                </li>
+                <li>
+                    <a href="formsOrcamento/forms.html" class="hideOnMobile">Orçamento</a>
+                </li>
+                <li>
+                    <a href="#gridDcosSection" class="hideOnMobile">Serviços</a>
+                </li>
+                <li>
+                    <a href="#formsContato" class="hideOnMobile" id="navContactButton">Contato</a>
+                </li>
                 <div class="socialMidiasContainer">
                     <a class="socialMidiaIcon" href="https://www.facebook.com/Agenda-T%C3%A9cnica-100669640753272/"
                         target="_blank"><i class="bi bi-facebook"></i></a>
+                    </a>
                     <a class="socialMidiaIcon" href="https://www.linkedin.com/company/ammarhes-consultoria/"
-                        target="_blank"><i class="bi bi-linkedin"></i>
+                        target="_blank">
+                        <i class="bi bi-linkedin"></i>
                     </a>
                 </div>
                 <div class="callNavContainer">
-                    <span class="callNavNumbers">(21) 3549-1640 / 2262-9752 /
-                        2026-0011</span>
-                    <span class="callNavText"><i class="bi bi-telephone-fill"></i> Solicitar uma
-                        ligação</span>
+                    <span class="callNavNumbers">
+                        (21) 3549-1640 / 2262-9752
+                    </span>
+                    <span class="callNavText">
+                        <i class="bi bi-telephone fill"></i>Solicitar uma ligação
+                    </span>
                 </div>
-                <li class="menuCloseButtonMobile" onclick=showSidebar()><a href="#"><img
-                            src="../Assets/IMGS/IconHamburguerMenu.svg" alt="Icon Hamburguer Menu"></a></li>
+                <li onclick=showSidebar() class="menuCloseButtonMobile">
+                    <a href="#">
+                        <img src="./Assets/IMGS/IconHamburguerMenu.svg" alt="Icon Hamburguer Menu">
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- BANNER HOME -->
         <section class="homeImage">
-            <div class="homeImageContainer">
-                <div class="homeImageText">
-                    <h1>Plataforma de gestão de segurança e saúde ocupacional baseada em tecnologia de inteligência
-                        artificial
-                    </h1>
-                    <p>A Agenda Técnica Sistemas é uma plataforma online, on time e full time para gestão ocupacional
-                        integrada, criada para produção, armazenamento e consulta eficiente de documentos da área de
-                        Segurança do Trabalho, de grandes e pequenas empresas, diretas ou terceirizadas. A plataforma
-                        possui conteúdo totalmente integrado a legislação além de contemplar o compliance brasileiro de
-                        SMS, permitindo alterações de documentos ao longo do tempo assim como a guarda dos mesmos como
-                        memorial para consultas futuras. A solução completa e definitiva para a gestão de SST! Pois
-                        reduz 90% dos erros habituais, tornando a confecção dos trabalhos 3 vezes mais rápida e
-                        integraliza os documentos.
-                    </p>
-                    <div class="homeImageTextLinks">
-                        <a href="/formsOrcamento/forms.html" id="homeImageTextButtonBudget">Fazer orçamento <i
-                                class="bi bi-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="homeImageForms">
-                    <form class="formHomeImage" action="">
-                        <h2>Acesso a plataforma</h2>
-                        <div class="formInputs">
-                            <input type="email" name="usuario" placeholder="Usuario/E-mail">
-                            <input type="password" name="senha" placeholder="Sua senha">
-                        </div><br>
-                        <div id="recaptchaContainer" class="g-recaptcha"
-                            data-sitekey="6Lct3LwpAAAAAD28yaJAJP2vclCnfUHG1Rk4RLve" data-callback="handleRecaptcha">
-                        </div>
-                        <button class="homeImageFormsSubmit" type="submit">Login</button>
-                    </form>
+            <div class="homeImageContainer" id="homeImageContainerID"></div>
+        </section>
+
+        <!-- SECTION COMPANIES -->
+        <section class="companies">
+            <div class="companiesDiv">
+                <h3>Conheça nossas empresas</h3>
+                <div class="companiesLogosDiv" id="companiesLogosDiv"></div>
+            </div>
+        </section>  
+
+        <!-- SECTION ABOUT -->
+        <section class="sectionAboutBanner" id="aboutUsSection">
+            <div class="swiffy-slider" id="bannerSlideAbout">
+                <ul class="slider-container" id="sliderAbout">
+                </ul>
+                <button type="button" class="slider-nav"></button>
+                <button type="button" class="slider-nav slider-nav-next"></button>
+
+                <div class="slider-indicators">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT  -->
-        <section class="aboutUs" id="aboutUs">
-            <div class="aboutUsTitle">
-                <span>um pouco sobre nós</span>
-                <h2>Criadores da plataforma Agenda Técnica Sistemas</h2>
-            </div>
-            <div class="aboutUsContainer">
-                <div class="aboutUsOptions" id="aboutUsOptions1">
-                </div>
-                <div class="aboutUsTabs" id="aboutUsTabs1">
-                </div>
-            </div>
-            <div class="aboutUsButtons">
-                <a href="https://ammarhes.com.br/" target="_blank" id="aboutUsButtonAmmarhes">Conheça A Ammarhes <i
-                        class="bi bi-chevron-right"></i></a>
-            </div>
-        </section>
-
-        <!-- empresas -->
-        <section class="empresas">
-            <div class="otherCompanies">
-                <h3 class="otherCompaniesH3">Conheça nossas empresas</h3>
-                <div class="otherCompaniesLogos">
-                    <div class="divLink">
-                        <a target="_blank" href="https://ammarhes.com.br/">
-                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoAmmarhesWrite.png"
-                                alt="Logo Ammarhes">
-                        </a>
-                        <a target="_blank" href="https://ammarhes.com.br/" class="aButtons">Clique e Acesse</a>
-                    </div>
-                    <div class="divLink">
-                        <a target="_blank" href="https://casaocupacional.com.br/">
-                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoCasa.png"
-                                alt="Logo Casa Ocupacional">
-                        </a>
-                        <a target="_blank" href="https://casaocupacional.com.br/" class="aButtons">Clique e Acesse</a>
-                    </div>
-                    <div class="divLink">
-                        <a target="_blank" href="https://www.agendatecnica.com.br/">
-                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoAgenda.png"
-                                alt="Logo Agenda Técnica">
-                        </a>
-                        <a target="_blank" href="https://www.agendatecnica.com.br/" class="aButtons">Clique e
-                            Acesse</a>
-                    </div>
-                    <div class="divLink">
-                        <a target="_blank" href="https://saude10clinica.com.br/">
-                            <img class="otherCompaniesLogosImgs" src="./Assets/Logo/LogoSaude10.png" alt="Logo Saúde 10"
-                                id="saude10">
-                        </a>
-                        <a target="_blank" href="https://saude10clinica.com.br/" class="aButtons">Clique e Acesse</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- GRID RECURSOS  -->
-        <section class="gridRecursos">
-            <div id="gridRecursosContainer">
-            </div>
-        </section>
-
-        <!-- GRID DOCUMENTOS -->
-        <section class="gridDocumentos" id="gridDocs">
+        <!-- SECTION DOCS -->
+        <section class="gridDocumentos" id="gridDcosSection">
             <h3 class="gridDocumentosh3">Documentos legais de Segurança do Trabalho</h3>
             <p class="gridDocumentosp">A tecnologia da nossa plataforma garante integração com o eSocial com emissão de
                 documentos dentro do
@@ -201,9 +166,15 @@
             </div>
         </section>
 
-        <!-- SECTION BANNER -->
-        <section class="banner">
-            <div class="swiffy-slider" id="listImg">
+        <!-- SECTION RECURSOS -->
+        <section class="gridRecursos">
+            <div id="gridRecursosContainer">
+            </div>
+        </section>
+
+        <!-- SECTION SLIDER2 -->
+        <section class="sectionBanner" id="Section">
+            <div class="swiffy-slider" id="bannerSlide">
                 <ul class="slider-container" id="slider">
                 </ul>
                 <button type="button" class="slider-nav"></button>
@@ -213,11 +184,12 @@
                     <button class="active"></button>
                     <button></button>
                     <button></button>
+                  
                 </div>
             </div>
         </section>
-
-        <!-- PLATAFORM -->
+        
+        <!-- SECTION PLATAFORMA -->
         <section class="gridsPlataforma">
             <h3 class="gridsPlataformah3">A plataforma ainda conta com outros recursos!
             </h3>
@@ -228,7 +200,7 @@
             </div>
         </section>
 
-        <!-- FORM -->
+        <!-- SECTION FORMS -->
         <section id="formsContato">
             <div class="formText">
                 <h2 class="formTextTilte">Fale conosco</h2>
@@ -277,7 +249,6 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="footer-container">
             <div class="footer-content"><img src="./Assets/Logo/LogoAgenda.png" alt="Logo Agenda Tecnica">
@@ -343,11 +314,16 @@
         </div>
     </footer>
     <a href="#" id="topBtn" class="top"></a>
-
 </body>
 
-<script src="./scripts/home.js"></script>
+<!-- JS -->
+<script src="home.js"></script>
 
+<!-- SLIDER JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+    defer></script>
+<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+    crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -6,6 +6,22 @@
     font-family: "Roboto", sans-serif;
 }
 
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --goldenRod: #EFB225;
+    --midnightBlue: #052C52;
+    --dimGrey: #6F7274;
+    --whiteSmoke: #F1F1F1;
+
+    /* SHADOWS */
+    --shadow0-2: rgba(0, 0, 0, 0.2);
+    --shadowWhite1: rgba(255, 255, 255, 0.90);
+
+    /* BACKGROUND BANNER */
+    --whiteBanner: linear-gradient(to right, white 45%, rgba(255, 255, 255, 0) 65%);
+}
+
 .top {
     --offset: 50px;
 
@@ -36,6 +52,10 @@
     border-right: 5px solid #fff;
 }
 
+/* WPP BUTTON */
+#robbu-whatsapp-button {
+    z-index: 1;
+}
 
 /* NAV */
 
@@ -45,8 +65,8 @@
     align-items: center;
     gap: 15px;
     padding: 0 15px;
-    background: #ffffff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background: var(--white);
+    box-shadow: 0 0 10px 0 var(--shadow0-2);
 }
 
 .navLogo {
@@ -58,87 +78,53 @@
     align-items: center;
 }
 
-.navDropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.navItem, .navDropBtn, .hideOnMobile {
+.navItem, .hideOnMobile, .showOnMobile {
     font-size: 15px;
     padding: 13px 14px;
     text-decoration: none;
     font-weight: 500;
     margin: 0 5px;
-    color: #052c52;
+    color: var(--midnightBlue);
     transition: 0.5s ease-out;
 }
 
 #navContactButton {
-    background: #efb225;
+    background: var(--goldenRod);
     border-radius: 5px;
-    color: #052c52;
+    color: var(--midnightBlue);
 }
 
 #navContactButton:hover {
-    background-color: #052c52;
-    color: #efb225;
+    background-color: var(--midnightBlue);
+    color: var(--goldenRod);
 }
 
-.hideOnMobile, .navDropBtn {
+.hideOnMobile, .showOnMobile {
     border: none;
     background: none;
 }
 
-.navItem:hover, .hideOnMobile:hover, .socialMidiaIcon:hover, .navDropBtn:hover {
-    color: #efb225;
-    background-color: #052c52;
+.navItem:hover, .hideOnMobile:hover, .socialMidiaIcon:hover, .showOnMobile:hover {
+    color: var(--goldenRod);
+    background-color: var(--midnightBlue);
     border-radius: 5px;
     border: none;
 }
 
-.navDropBtnContent {
-    display: none;
-    min-width: 170px;
-    position: absolute;
-    background-color: #ffffff;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.navDropBtnItem {
-    float: none;
-    color: #6f7274;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: 500;
-    text-align: left;
-}
-
-.navDropBtnItem:hover {
-    color: #052c52;
-    background-color: #f1f1f1;
-}
-
-.navDropdown:hover .navDropBtnContent, .hideDivOnMobile:hover .navDropBtnContent {
-    display: block;
-    cursor: pointer;
-}
-
 .socialMidiaIcon {
     padding: 11px;
-    color: #efb225;
+    color: var(--goldenRod);
 }
 
 .callNavContainer {
     padding: 1% 25px;
-    background: #052c52;
+    background: var(--midnightBlue);
     margin: 0 0 0 25px;
 }
 
 .callNavNumbers, .callNavText {
     font-size: 11px;
-    color: #efb225;
+    color: var(--goldenRod);
     display: block;
     margin: 10px 0;
 }
@@ -151,7 +137,7 @@
     margin: 0 5px 0 0;
 }
 
-/* NAV MOBILE */
+/* MOBILE */
 
 nav ul {
     list-style: none;
@@ -167,9 +153,9 @@ nav li:first-child {
     right: 0;
     height: 100vh;
     width: 250px;
-    background-color: rgba(255, 255, 255, 0.90);
+    background-color: var(--shadowWhite1);
     backdrop-filter: blur(12px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 10px var(--shadow0-2);
     list-style: none;
     display: none;
     flex-direction: column;
@@ -183,7 +169,8 @@ nav li:first-child {
 }
 
 .navItensContainerMobile a {
-    width: 100%;
+    text-decoration: none;
+    color: var(--midnightBlue);
 }
 
 .menuCloseButtonMobile {
@@ -337,14 +324,11 @@ footer {
 
 @media (max-width: 1050px) {
 
+
     /* NAV */
 
     .navContainer {
         justify-content: space-between;
-    }
-
-    #navContactButton {
-        margin-left: 5px;
     }
 
     .hideOnMobile, .callNavContainer {
@@ -359,6 +343,7 @@ footer {
         display: block;
     }
 
+    /* FORMS */
     .formQuestions {
 
         grid-template-columns: repeat(1, 1fr);
