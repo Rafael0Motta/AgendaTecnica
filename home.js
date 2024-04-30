@@ -338,11 +338,6 @@ gridRecursosData.forEach((data) => {
 const gridDocsData = [
   {
     icon: "bi bi-file-earmark-medical-fill",
-    title: "PPRA",
-    text: `Utilize o documento base do PPRA (tradicional ou validado para o eSocial), realizando o mapeamento de riscos, elaborando cronogramas de atividades e medições para identificar e implementar medidas de segurança.    `,
-  },
-  {
-    icon: "bi bi-file-earmark-medical-fill",
     title: "LTCAT",
     text: `Analisa o LTCAT individualmente ou de forma coletiva, documentando se há necessidade ou não de aposentadoria especial, considerando a periodicidade da exposição ao agente nocivo.`,
   },
