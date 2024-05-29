@@ -141,7 +141,7 @@ const companiesData = [
     id: "casa",
   },
   {
-    href: "https://www.agendatecnica.com.br/",
+    href: "https://asoonline.com.br/",
     src: "./Assets/Logo/LogoAgenda.png",
     alt: "Logo Agenda Técnica",
     id: "agenda",
